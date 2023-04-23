@@ -23,7 +23,6 @@ namespace TRex {
         public Form1() {
             InitializeComponent();
             GameReset();
-
         }
 
         private void GameReset() {
