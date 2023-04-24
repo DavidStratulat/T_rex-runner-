@@ -27,6 +27,24 @@ namespace TRex {
 
         private void GameReset() {
             
+            jumping = false;
+            forceKeyPressed = 12;
+            score = 0;
+            jumpSpeed = 0;
+            obstacleSpeed = 10;
+            txtScoreLabel.Text = "Score" + score;
+            trexPictureBox.Image = Properties.Resources.running;
+            isGameOver = false;
+            trexPictureBox.Top = 367;
+
+            foreach (Control x in this.Controls) {
+                if (x is PictureBox && (string)x.Tag == "obstacle") {
+                    position = this.ClientSize.Width + random.Next(100, 200) + (x.Width * 10);
+                    x.Left = position;
+
+                }
+
+            }
         }
 
         private void MainGameTimerEvent(object sender, EventArgs e) {
