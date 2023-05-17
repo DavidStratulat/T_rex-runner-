@@ -1,5 +1,5 @@
 ﻿namespace TRex {
-    partial class Form1 {
+    partial class TRexMainClass {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -39,16 +39,17 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(-6, 405);
+            this.pictureBox1.Location = new System.Drawing.Point(-9, 412);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(816, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(816, 40);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // trexPictureBox
             // 
             this.trexPictureBox.Image = global::TRex.Properties.Resources.running;
-            this.trexPictureBox.Location = new System.Drawing.Point(125, 363);
+            this.trexPictureBox.Location = new System.Drawing.Point(125, 358);
             this.trexPictureBox.Name = "trexPictureBox";
             this.trexPictureBox.Size = new System.Drawing.Size(40, 43);
             this.trexPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -89,10 +90,9 @@
             // 
             // gameTimer
             // 
-            this.gameTimer.Interval = 20;
             this.gameTimer.Tick += new System.EventHandler(this.MainGameTimerEvent);
             // 
-            // Form1
+            // TRexMainClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,8 +103,9 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.trexPictureBox);
-            this.Name = "Form1";
+            this.Name = "TRexMainClass";
             this.Text = "T Rex Endless Runner";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyIsDownEvent);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.KeyIsUpEvent);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
