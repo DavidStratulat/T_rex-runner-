@@ -34,7 +34,7 @@ namespace TRex {
 
             foreach (Control x in this.Controls) {
                 if (x is PictureBox && (string)x.Tag == "obstacle") {
-                    position = this.ClientSize.Width + random.Next(500, 800) + (x.Width * 20);
+                    position = this.ClientSize.Width + random.Next(500, 800) + (x.Width * 25);
                     x.Left = position;
 
                 }
@@ -55,15 +55,15 @@ namespace TRex {
             }
             
             if (jumping == true) {
-                jumpSpeed = -10 ;
+                jumpSpeed = -8 ;
                 force -- ;
             } else {
-                jumpSpeed = 10;
+                jumpSpeed = 8;
             }
 
 
             if (trexPictureBox.Top > 366 && jumping == false) {
-                force = 12;
+                force = 15;
                 trexPictureBox.Top = 367;
                 jumpSpeed = 0;
             }
@@ -74,7 +74,7 @@ namespace TRex {
                     x.Left -= obstacleSpeed;
 
                     if (x.Left < -100) {
-                        x.Left = this.ClientSize.Width + random.Next(200, 500) + (x.Width * 20);
+                        x.Left = this.ClientSize.Width + random.Next(200, 500) + (x.Width * 25);
                         score++;
                     }
 
